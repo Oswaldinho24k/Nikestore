@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.core.urlresolvers import reverse
 from django.views.generic import View 
 from .forms import OrderCreateForm
 from carrito.cart import Cart
 from .models import OrderItem, Order 
 from .tasks import order_created
+
+
 
 
 # Create your views here.
@@ -33,9 +36,21 @@ class CreateOrder(View):
 			cart.clear()
 			#enviaremos una tarea asíncrona a celery
 			order_created.delay(order.id)
-			template_name='orders/thanks.html'
-			context = {
-			'order':order
+			#orden para paypal
+			request.session['order_id']=order.id
+			return redirect(reverse('payment:process'))
+			#template_name='orders/thanks.html'
+			#context = {
+			#'order':order
+			#}
+			#return render(request, template_name, context)
+		else:
+			cart=Cart(request)
+			form=OrderCreateForm(request.POST)
+			template='orders/create.html'
+			context={
+			'cart':cart,
+			'form':form
 			}
-			return render(request, template_name, context)
+			return render(request,template,context)
 

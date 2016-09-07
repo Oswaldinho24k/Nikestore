@@ -20,6 +20,8 @@ from django.contrib import admin
 from productos import urls as productUrls
 from carrito import urls as cartUrls
 from orders import urls as orderUrls
+from paypal.standard.ipn import urls as paypalUrls
+from payment import urls as paymentUrls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -31,5 +33,8 @@ urlpatterns = [
         kwargs={'document_root':settings.MEDIA_ROOT}),
 
     
-    url(r'^orders/', include(orderUrls, namespace="orders"))
+    url(r'^orders/', include(orderUrls, namespace="orders")),
+    url(r'^paypal/', include(paypalUrls)),
+    url(r'^payment/', include(paymentUrls,namespace='payment')),
+
 ]

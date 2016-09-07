@@ -14,9 +14,11 @@ class ListView(View):
 		products = Product.objects.all()
 		template_name='products/products.html'
 		#products=Product.objects.all()
+		form=CartAddProductForm()
 
 		context={
 		'products':products,
+		'form':form
 		#'categories':categories
 		}
 

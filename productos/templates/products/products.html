@@ -1,12 +1,20 @@
 
 {%extends 'base.html'%}
 {%block content%}
+<div>
 {%for p in products%}
 <a href="{{p.get_absolute_url}}">
 
 <img src="/media/{{p.image}}" width="200" height="200">
 </a>
-<h4>{{p.name}}</h4>
+<h4>{{p.name}}</h4> 
+<form action="{%url 'cart:cart_add' p.id%}" method="post">
+	{% csrf_token %}
+	{{form.as_p}}
+
+	<input type="submit" value="+Cart">
+</form>
 {%endfor%}
+</div>
 {%endblock content%}
 

@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'productos',
     'carrito',
     'orders',
+    'paypal.standard.ipn',
+    'payment',
 ]
 
 MIDDLEWARE = [
@@ -123,8 +125,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'staticfiles'
+STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
 
 CART_SESSION_ID = 'cart'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Django-paypal Configuracion
+PAYPAL_RECEIVER_EMAIL = 'oswalfut_96@hotmail.com'
+PAYPAL_TEST = True
