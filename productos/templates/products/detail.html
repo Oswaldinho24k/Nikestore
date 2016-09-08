@@ -1,15 +1,23 @@
 {%extends 'base.html'%}
-{%block content%}
-<h1>{{product.name}}</h1>
-<img src="/media/{{product.image}}">
-<h3>${{product.price}}</h3>
-<form action="{%url 'cart:cart_add' product.id%}" method="post">
-	{% csrf_token %}
-	{{form.as_p}}
+{%load static%}
 
-	<input type="submit" value="Add to cart">
-</form>
-<p>{{product.desc}}</p>
+
+{%block content%}
+
+
+
+<div class="detalle">
+	<h1>{{product.name}}</h1>
+	<img src="/media/{{product.image}}">
+	<h3>${{product.price}}</h3>
+	<form action="{%url 'cart:cart_add' product.id%}" method="post">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" value="Add to cart">
+	</form>
+	<p>{{product.desc}}</p>
+	
+</div>
 {%endblock content%}
 
 

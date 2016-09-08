@@ -16,7 +16,7 @@ class AddProd(View):
 				quantity=cd['quantity'],
 				update_quantity=cd['update'])
 		return redirect('cart:cart_detail')
-
+		
 class Remove(View):
 	def get(self,request,product_id):
 		cart = Cart(request)

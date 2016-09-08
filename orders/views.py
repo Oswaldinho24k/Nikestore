@@ -36,6 +36,7 @@ class CreateOrder(View):
 			cart.clear()
 			#enviaremos una tarea asíncrona a celery
 			order_created.delay(order.id)
+			
 			#orden para paypal
 			request.session['order_id']=order.id
 			return redirect(reverse('payment:process'))

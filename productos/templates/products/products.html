@@ -1,20 +1,28 @@
 
 {%extends 'base.html'%}
+{%load static%}
 {%block content%}
-<div>
-{%for p in products%}
-<a href="{{p.get_absolute_url}}">
 
-<img src="/media/{{p.image}}" width="200" height="200">
-</a>
-<h4>{{p.name}}</h4> 
-<form action="{%url 'cart:cart_add' p.id%}" method="post">
-	{% csrf_token %}
-	{{form.as_p}}
 
-	<input type="submit" value="+Cart">
-</form>
-{%endfor%}
+<div class="product">
+<h1>Just buy it</h1>
+	{%for p in products%}
+	<div class="ppp">
+		<a href="{{p.get_absolute_url}}">
+
+		<img src="/media/{{p.image}}" width="200" height="200">
+		</a>
+		<h4>{{p.name}}</h4> 
+		<form action="{%url 'cart:cart_add' p.id%}" method="post">
+			{% csrf_token %}
+			{{form.as_p}}
+
+			<input type="submit" value="+Cart">
+		</form>
+	</div>
+	{%endfor%}
 </div>
+
+
 {%endblock content%}
 
