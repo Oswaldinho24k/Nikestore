@@ -6,23 +6,30 @@ from carrito.forms import CartAddProductForm
 # Create your views here.
 
 class ListView(View):
-	def get(self, request):
-		#if category:
-		#	categories=Category.objects.get(name=categories)
-		#	products = cat.product.all()
-		#else:
-		products = Product.objects.all()
+	def get(self, request, category=None):
+		#category=None
+		if category:
+			caty=Category.objects.get(category=category)
+			products = Product.objects.all().filter(cat=caty)
+		else:
+			products = Product.objects.all()
+		
 		template_name='products/products.html'
-		#products=Product.objects.all()
 		form=CartAddProductForm()
+		cat=Category.objects.all()
+		
 
+		
 		context={
 		'products':products,
-		'form':form
-		#'categories':categories
+		'form':form,
+		'caty':category,
+		'cat':cat
 		}
 
 		return render(request, template_name, context)
+
+	
 
 class DetailView(View):
 	def get(self, request, slug):
@@ -37,3 +44,5 @@ class DetailView(View):
 
 		return render(request, template_name, context)
 
+
+		

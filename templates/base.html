@@ -1,4 +1,5 @@
 {%load static%}
+{%load product_tags%}
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +13,21 @@
 <body>
 <nav>
 	<a href="{%url 'products:products'%}"><img src="http://news.nike.com/resources/swoosh-default.jpg" width="150" height="100"></a>
+<!-- Links para filtrar los resultados de productos -->
+	<div>
+		<ul>
+
+			{%categories as cats%}
+			{%for cat in cats%}
+			<li><a href="{%url 'products:category' cat.category%}"><h1>{{cat.category}}</h1></a></li>
+			{%empty%}
+			<h2>No hay</h2>
+			{%endfor%}	
+	</div>
+
+		
+	</ul>
+
 	<p>
 		
 		{%with total_items=cart|length%}
@@ -25,6 +41,7 @@
 		{%endwith%}
 	</p>
 </nav>
+
 
 {%block content%}
 {%endblock content%}

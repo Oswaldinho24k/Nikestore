@@ -1,6 +1,7 @@
 *{
 	margin:0%;
 	padding: 0%;
+
 }
 
 nav{
@@ -14,11 +15,26 @@ nav{
 	margin: 0%;
 	padding: 0%;
 }
+nav p{
+	padding: 10px;
+}
+nav p a{
+	color: white;
+}
+nav div ul li{
+	display: inline-flex;
+	padding: 5px;
+}
+nav div ul li a{
+	color:white;
+}
+
 .detalle{
-	background:gray;
-	width: 90%;
+	color: white;
+	background:rgb(85, 0, 0);
+	width: 100%;
 	
-	margin: 5%;
+	margin: 0%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -30,12 +46,30 @@ nav{
 	background-color: rgb(85, 0, 0);
 	padding: 0%;
 	margin: 0%;
+	
 }
 .product h1{
 	text-align: center;
+
 }
 .ppp{
 	
 	display:inline-block;
+
 	padding: 2%;
+}
+.carrito{
+	text-align: center;
+	background-color: rgb(85, 0, 0);
+	color: white;
+	justify-content:space-between;
+	flex-direction:;
+	align-items: 
+
+}
+.carrito td{
+	padding: 2%;
+}
+.carrito table{
+	padding-left: 30%;
 }

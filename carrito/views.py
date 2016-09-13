@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import CartAddProductForm
+from django.core.urlresolvers import reverse
 from django.views.generic import View
 from .cart import Cart
 from productos.models import Product
@@ -15,8 +16,11 @@ class AddProd(View):
 			cart.add(product=product,
 				quantity=cd['quantity'],
 				update_quantity=cd['update'])
-		return redirect('cart:cart_detail')
-		
+		#return redirect('cart:cart_detail')
+		#if reverse(request.path) == '/products/':
+		return redirect('products:products')
+		#else:
+		#	return redirect('products:detalle product.id')
 class Remove(View):
 	def get(self,request,product_id):
 		cart = Cart(request)

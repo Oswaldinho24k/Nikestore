@@ -1,8 +1,9 @@
 {%extends 'base.html'%}
+{%load static%}
 {%block content%}
-
+<section class="carrito">
 <h1>Compra, compra compraaaaaaaaaaaaaa</h1>
-<table>
+<table >
 	<thead>
 		<tr>
 			<th>Image</th>
@@ -45,7 +46,7 @@
 			{%endwith%}
 		{%endfor%}
 		<tr>
-			<td>Total</td>
+			<td><h3>Total</h3></td>
 			<td colspan="4"></td>
 			<td>$ {{cart.get_total_price}}</td>
 		</tr>
@@ -54,5 +55,6 @@
 
 <a href="{%url 'products:products'%}"><button>Keep buying</button></a>
 <a href="{%url 'orders:create'%}"><button>Pay</button></a>
+</section>
 {%endblock content%}
 

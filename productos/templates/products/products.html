@@ -1,6 +1,6 @@
-
 {%extends 'base.html'%}
 {%load static%}
+{%block titulo%} Nike Store{%endblock titulo%}
 {%block content%}
 
 
@@ -18,11 +18,10 @@
 			{{form.as_p}}
 
 			<input type="submit" value="+Cart">
+
 		</form>
 	</div>
 	{%endfor%}
 </div>
-
-
 {%endblock content%}
 
