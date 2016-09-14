@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'orders',
     'paypal.standard.ipn',
     'payment',
+    'accounts',
+    'social.apps.django_app.default',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +71,9 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 #mi carrito
                 'carrito.context_processors.cart',
+                #socialauth
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -136,3 +141,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Django-paypal Configuracion
 PAYPAL_RECEIVER_EMAIL = 'oswalfut_96@hotmail.com'
 PAYPAL_TEST = True
+
+AUTHENTICATION_BACKENDS = (
+# Facebook
+'social.backends.facebook.FacebookOAuth2',
+# Django
+'django.contrib.auth.backends.ModelBackend',
+)
+SOCIAL_AUTH_FACEBOOK_KEY = '614336185414719'
+SOCIAL_AUTH_FACEBOOK_SECRET = '961bb9105246e77bad510fe32cacc1b8'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/"
