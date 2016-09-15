@@ -74,3 +74,8 @@ nav div ul li a{
 .carrito table{
 	padding-left: 30%;
 }
+.user img{
+	width: 10%;
+	height: 10%;
+	border-radius: 50%;
+}

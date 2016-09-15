@@ -1,5 +1,6 @@
 {%load static%}
 {%load product_tags%}
+{%load profile_tag%}
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,10 +45,8 @@
 		<p>
 			{% if user and not user.is_anonymous %}
 			Buy Mr. {{ user.get_full_name }}.
-			{{request.user.email}}
-
-			
-
+			<!--{{request.user.email}}-->
+			<img src="http://graph.facebook.com/{%image_profile request%}/picture?type=large">
 
  			<a href="{% url 'user-logout' %}">Logout</a>
  
@@ -59,6 +58,9 @@
 		</p>
 	</div>
 </nav>
+<div>
+	
+</div>
 
 
 {%block content%}
