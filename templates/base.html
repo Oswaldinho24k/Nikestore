@@ -44,6 +44,11 @@
 		<p>
 			{% if user and not user.is_anonymous %}
 			Buy Mr. {{ user.get_full_name }}.
+			{{request.user.email}}
+
+			
+
+
  			<a href="{% url 'user-logout' %}">Logout</a>
  
  			{% else %}

@@ -46,7 +46,7 @@ urlpatterns = [
     # Python Social Auth URLs
     url('', include('social.apps.django_app.urls', namespace='social')),
     # Home URL
-    url(r'^$', TemplateView.as_view(template_name="home.html"), name="home"),
+    url(r'^$', TemplateView.as_view(template_name="base.html"), name="home"),
     # Logout URL
     url(
         r'^users/logout/$',
