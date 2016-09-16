@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'payment',
     'accounts',
     'social.apps.django_app.default',
+    'main',
 ]
 
 MIDDLEWARE = [

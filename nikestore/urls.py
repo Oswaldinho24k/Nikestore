@@ -20,6 +20,8 @@ from django.contrib import admin
 from productos import urls as productUrls
 from carrito import urls as cartUrls
 from orders import urls as orderUrls
+from main import urls as UrlsMain
+#payment
 from paypal.standard.ipn import urls as paypalUrls
 from payment import urls as paymentUrls
 #for socialauth
@@ -42,6 +44,7 @@ urlpatterns = [
     url(r'^orders/', include(orderUrls, namespace="orders")),
     url(r'^paypal/', include(paypalUrls)),
     url(r'^payment/', include(paymentUrls,namespace='payment')),
+    url(r'^', include(UrlsMain,namespace="home")), 
 
     # Python Social Auth URLs
     url('', include('social.apps.django_app.urls', namespace='social')),

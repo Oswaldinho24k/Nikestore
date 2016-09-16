@@ -2,7 +2,9 @@
 	margin:0%;
 	padding: 0%;
 
+
 }
+
 
 nav{
 	background: black;
@@ -65,7 +67,7 @@ nav div ul li a{
 	color: white;
 	justify-content:space-between;
 	flex-direction:;
-	align-items: 
+	
 
 }
 .carrito td{
@@ -78,4 +80,21 @@ nav div ul li a{
 	width: 10%;
 	height: 10%;
 	border-radius: 50%;
+}
+.main {
+	background-color:rgb(85, 0, 0);
+	padding: 10px;	
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.buy{
+	background-color: black;
+	color:white;
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+}
+.buy a{
+	color: white;
 }

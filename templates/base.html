@@ -6,14 +6,14 @@
 <head>
 	<title>
 		{%block titulo%}
-		Base
+		NikeStore
 		{%endblock titulo%}
 	</title>
 	<link rel="stylesheet" type="text/css" href="{%static 'css/base.css'%}">
 </head>
 <body>
 <nav>
-	<a href="{%url 'products:products'%}"><img src="http://news.nike.com/resources/swoosh-default.jpg" width="150" height="100"></a>
+	<a href="{%url 'home:home'%}"><img src="/static/images/nike.jpg" width="150" height="100"></a>
 <!-- Links para filtrar los resultados de productos -->
 	<div>
 		<ul>
@@ -58,8 +58,9 @@
 		</p>
 	</div>
 </nav>
-<div>
-	
+
+<div class="buy">
+	<a href="{%url 'products:products'%}"><h1>JUST BUY IT</h1></a>
 </div>
 
 
