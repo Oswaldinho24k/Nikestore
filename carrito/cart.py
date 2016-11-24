@@ -77,7 +77,7 @@ class Cart(object):
 
 
 	def clear(self):
-		#borrar el carrita de las esion de usuario
+		#borrar el carrita de las sesion de usuario
 		del self.session[settings.CART_SESSION_ID]
 		self.session.modified = True
 
