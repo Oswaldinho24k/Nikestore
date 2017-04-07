@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'accounts',
     'social.apps.django_app.default',
     'main',
+    'conekta',
 ]
 
 MIDDLEWARE = [
@@ -116,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -158,4 +159,7 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
 }
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/products"
+
+CONEKTA_PRIVATE_KEY = 'key_uttsEXqPgZGWbSs9JeGbWg'
+
 
